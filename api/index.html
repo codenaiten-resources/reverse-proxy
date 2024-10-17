@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REST</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #585303, #ebd618);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 100px 5% 50px 5%;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 0;
+            font-weight: 400;
+        }
+        ul {
+            list-style: none;
+            margin-top: 1em;
+        }
+        li {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5em 1em;
+            margin: 0.5em 0;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #params{
+            display: none;
+        }
+        span{
+            font-style: italic;
+        }
+    </style>
+
+<script>
+    window.addEventListener( 'load', function(){
+        const url = new URL(window.location.href);
+        const host = url.host;
+        const protocol = url.protocol;
+        const uri = url.pathname;
+        const params = url.search;
+        document.querySelector('#host span').textContent = `${protocol}//${host}`;
+        document.querySelector('#url span').textContent = uri;
+        if( params ){
+            const paramsElement = document.querySelector('#params');
+            paramsElement.querySelector( 'span' ).textContent = params.substring(1);
+            paramsElement.style.display = 'block';
+        }
+    });
+</script>
+</head>
+
+<body>
+    <div>
+        <h1>API REST</h1>
+        <h3 id="host">Host: <span></span></h2>
+        <h3 id="url">url: <span></span></h2>
+        <h3 id="params">params: <span></span></h2>     
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+</body>
+</html>

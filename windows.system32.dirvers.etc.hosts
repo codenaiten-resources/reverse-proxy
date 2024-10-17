@@ -1,0 +1,5 @@
+﻿127.0.0.1 app.reverse.proxy
+127.0.0.1 app.api
+127.0.0.1 app.test.first
+127.0.0.1 app.test.second
+127.0.0.1 app.test.third
